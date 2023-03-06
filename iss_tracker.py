@@ -362,22 +362,36 @@ def help() -> str:
     Returns:
         None
     """
-    return 'These are the endpoints of the iss_tracker API.\n' + \
-            '\n\nNote that if the data is empty, all GET\n' + \
+    return 'These are the endpoints of the iss_tracker API.\n\n' + \
+            'Note that if the data is empty, all GET\n' + \
             'messages will return a string message with a 404\n' + \
             'status.\n\n' + \
+            'Note that epochs are in the form\n' + \
+            'YYYY-DDDTHH:MM:SS.000Z, or in URL-friendly form\n' + \
+            'YYYY-DDDTHH%3AMM%3ASS%2E000Z\n\n' + \
             '\t/ GET Return the entire data set in JSON form.\n' + \
             '\t/epochs GET Return a list of all epochs in JSON form.\n' + \
             '\t\tint:limit The maximum number of epochs to return.\n' + \
             '\t\tint:offset What epoch to start from, zero-indexed\n' + \
-            '\t/epochs/<int:epoch> GET Return the state vector for\n' + \
+            '\t/epochs/<epoch> GET Return the state vector for\n' + \
             '\t\tan epoch in JSON form. Returns a string error\n' + \
             '\t\tmessage with a 404 status if no such record.\n' + \
-            '\t/epochs/<int:epoch>/speed GET Return the instantaneous\n' + \
+            '\t/epochs/<epoch>/speed GET Return the instantaneous\n' + \
             '\t\tspeed for an epoch in JSON form. Returns a string\n' + \
             '\t\terror message with a 404 status if no such record.\n' + \
+            '\t/epochs/<epoch>/location GET Return a dictionary of\n' + \
+            '\t\tthe latitude, longitude, altitude, and geoposition\n' + \
+            '\t\tfor an epoch in JSON form. Returns a string error\n' + \
+            '\t\tmessage with a 404 status if no such record.\n' + \
+            '\t/now GET Return a dictionary of the latitude,\n' + \
+            '\t\tlongitude, altitude, and geoposition for the closest\n' + \
+            '\t\tepoch to present in JSON form. It also indicates\n' + \
+            '\t\thow far away in time the closest epoch is.\n' + \
             '\t/delete-data DETETE Clear all data in the instance.\n' + \
-            '\t/post-data POST Update and overwrite all data.\n'
+            '\t/post-data POST Update and overwrite all data.\n' + \
+            '\t/comment GET Return comment list from data.\n' + \
+            '\t/header GET Return header dictionary from data.\n' + \
+            '\t/metadata GET Return metadata dictionary from data.\n'
 
 
 

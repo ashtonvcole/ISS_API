@@ -1,0 +1,12 @@
+---
+version: "3"
+
+services:
+        flask-app:
+                build:
+                        context: ./
+                        dockerfile: ./Dockerfile
+                image: ashtonvcole/iss_tracker:1.0
+                # volumes: # None
+                ports:
+                        - 5000:5000
