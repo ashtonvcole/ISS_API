@@ -270,7 +270,7 @@ curl http://localhost:5000/epochs/2023-077T15%3A47%3A35%2E995Z/location
 
 ### `/now`
 
-This provides the same [location information](#epochsepochlocation) as before, for the epoch closest to the present. It also informs the user of the time difference between the current time and epoch, in seconds. If the data set is empty, it will return a string message with a 404 status code.
+Warning: This only functions circa the beginning of March. This provides the same [location information](#epochsepochlocation) as before, for the epoch closest to the present. It also informs the user of the time difference between the current time and epoch, in seconds. If the data set is empty, it will return a string message with a 404 status code.
 
 ```bash
 curl http://localhost:5000/now
